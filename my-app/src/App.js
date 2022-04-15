@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React,{useState} from 'react';
 
+//estilos css
 const cssApp = {
   display: 'flex',
   flexDirection: 'row',
@@ -36,7 +37,7 @@ const cssdisplays={
   textAlign:'end',
   marginTop: '3px'
 }
-
+//elemento principal
 function App(){
   const [valorone, setValorOne]=useState(0);
   const [valorthu, setValorThu]=useState(0);
@@ -100,7 +101,7 @@ function App(){
     setResult(0);
   }
 
-//<img src={logo} className="App-logo" alt="logo"/>
+//renderização
   return (    
     <div className="App">
       <div style={cssApp}>
