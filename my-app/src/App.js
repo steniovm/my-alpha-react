@@ -44,22 +44,18 @@ function App(){
   const [result, setResult]=useState(0);
   //elementos
   const btnnumber=(value,addvalue)=>{
-    let clickfunction = function(){addvalue(value)};
     return(
-      React.createElement('button',{'style': cssbuton, 'onClick': clickfunction},value)
-      //<button style={cssbuton} onClick={function(){addvalue(value)}}>{value}</button>
+      <button style={cssbuton} onClick={function(){addvalue(value)}}>{value}</button>
     )
   }
   const bntop = (cop,op)=>{
     return(
-      React.createElement('button',{'style': cssbuton, 'onClick': op},cop)
-      //<button style={cssbuton} onClick={op}>{cop}</button>
+      <button style={cssbuton} onClick={op}>{cop}</button>
     )
   }
   const shownumber = (valor)=>{
     return(
-      React.createElement('label',{'style': cssdisplays},valor)
-      //<label style={cssdisplays}>{valor}</label>
+      <label style={cssdisplays}>{valor}</label>
     )
   }
   //funções
@@ -106,95 +102,71 @@ function App(){
   }
 
 //renderização
-  return (
+  return (    
     <div className="App">
-    <div style={cssApp}>
-      <div id='inputs' style={cssinputs}>
-      <h1>Calculadora Simples</h1>
-        <div id='numbersone' style={cssbuttons}>
-          {btnnumber(0,inputone)}
-          {btnnumber(1,inputone)}
-          {btnnumber(2,inputone)}
-          {btnnumber(3,inputone)}
-          {btnnumber(4,inputone)}
-          {btnnumber(5,inputone)}
-          {btnnumber(6,inputone)}
-          {btnnumber(7,inputone)}
-          {btnnumber(8,inputone)}
-          {btnnumber(9,inputone)}
+      <div style={cssApp}>
+        <div id='inputs' style={cssinputs}>
+        <h1>Calculadora Simples</h1>
+          <div id='numbersone' style={cssbuttons}>
+            {btnnumber(0,inputone)}
+            {btnnumber(1,inputone)}
+            {btnnumber(2,inputone)}
+            {btnnumber(3,inputone)}
+            {btnnumber(4,inputone)}
+            {btnnumber(5,inputone)}
+            {btnnumber(6,inputone)}
+            {btnnumber(7,inputone)}
+            {btnnumber(8,inputone)}
+            {btnnumber(9,inputone)}
+          </div>
+          {shownumber(valorone)}
+          <div id='numbersthu' style={cssbuttons}>
+            {btnnumber(0,inputthu)}
+            {btnnumber(1,inputthu)}
+            {btnnumber(2,inputthu)}
+            {btnnumber(3,inputthu)}
+            {btnnumber(4,inputthu)}
+            {btnnumber(5,inputthu)}
+            {btnnumber(6,inputthu)}
+            {btnnumber(7,inputthu)}
+            {btnnumber(8,inputthu)}
+            {btnnumber(9,inputthu)}
+          </div>
+          {shownumber(valorthu)}
+          <div id='operations' style={cssbuttons}>
+            {bntop('+',soma)}
+            {bntop('-',subtrai)}
+            {bntop('*',multiplica)}
+            {bntop('÷',divide)}
+            {bntop('C',limpar)}
+          </div>
+          {shownumber(result)}
         </div>
-        {shownumber(valorone)}
-        <div id='numbersthu' style={cssbuttons}>
-          {btnnumber(0,inputthu)}
-          {btnnumber(1,inputthu)}
-          {btnnumber(2,inputthu)}
-          {btnnumber(3,inputthu)}
-          {btnnumber(4,inputthu)}
-          {btnnumber(5,inputthu)}
-          {btnnumber(6,inputthu)}
-          {btnnumber(7,inputthu)}
-          {btnnumber(8,inputthu)}
-          {btnnumber(9,inputthu)}
-        </div>
-        {shownumber(valorthu)}
-        <div id='operations' style={cssbuttons}>
-          {bntop('+',soma)}
-          {bntop('-',subtrai)}
-          {bntop('*',multiplica)}
-          {bntop('÷',divide)}
-          {bntop('C',limpar)}
-        </div>
-        {shownumber(result)}
       </div>
+      <img src={logo} className="App-logo" alt="logo" />
     </div>
-    <img src={logo} className="App-logo" alt="logo" />
-  </div>
-  //aqui não funcionu    
-    /*React.createElement('div',{'className': 'App'},
-    [React.createElement('div',{'style': cssApp},
-    React.createElement('div',{'id': 'inputs', 'style': cssinputs},[
-      `${React.createElement('h1',null,'Calculadora Simples')}`,
-      `${React.createElement('div',{'id':'numbersone','style':cssbuttons},
-         [btnnumber(0,inputone),
-          btnnumber(1,inputone),
-          btnnumber(2,inputone),
-          btnnumber(3,inputone),
-          btnnumber(4,inputone),
-          btnnumber(5,inputone),
-          btnnumber(6,inputone),
-          btnnumber(7,inputone),
-          btnnumber(8,inputone),
-          btnnumber(9,inputone)]
-      )}`,
-      `${shownumber(valorone)}`,
-      `${React.createElement('div',{'id':'numbersthu','style':cssbuttons},
-         [btnnumber(0,inputthu),
-          btnnumber(1,inputthu),
-          btnnumber(2,inputthu),
-          btnnumber(3,inputthu),
-          btnnumber(4,inputthu),
-          btnnumber(5,inputthu),
-          btnnumber(6,inputthu),
-          btnnumber(7,inputthu),
-          btnnumber(8,inputthu),
-          btnnumber(9,inputthu)]
-      )}`,
-      `${shownumber(valorthu)}`,
-      `${React.createElement('div',{'id':'operations','style':cssbuttons},
-         [bntop('+',soma),
-          bntop('-',subtrai),
-          bntop('*',multiplica),
-          bntop('÷',divide),
-          bntop('C',limpar)]
-      )}`,
-      `${shownumber(result)}`,
-    ]
-    )),
-    React.createElement('img',{'src': logo, 'className': "App-logo", 'alt': "logo"})
-    ]
-  )*/
   );
 }
 
+/*function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}*/
 
 export default App;
